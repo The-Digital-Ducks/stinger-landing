@@ -1,125 +1,470 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stinger - Privacy Policy</title>
-  <style>
-    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; line-height: 1.65; color: #1d1d1f; }
-    h1, h2 { line-height: 1.25; }
-    h1 { margin-top: 0; }
-    hr { margin: 48px 0; border: 0; border-top: 1px solid #ddd; }
-    .meta { color: #666; }
-    code { background: #f5f5f5; padding: 0.15em 0.35em; border-radius: 4px; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Informativa sulla Privacy di Stinger — Stinger Privacy Policy">
+<title>Stinger · Privacy Policy</title>
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  :root{
+    --ink:#08080A;
+    --panel:#101015;
+    --line:#23232B;
+    --silver:#EDEDF1;
+    --text:#C4C4CE;
+    --muted:#7E7E8A;
+    --red:#E11221;
+    --red-soft:#FF4450;
+    --font-display: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --font-body: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    --rail: 26px;
+    --gutter: 58px;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    padding:0 20px 96px;
+    font-family:var(--font-body);
+    font-size:1.0625rem;
+    line-height:1.72;
+    color:var(--text);
+    background:
+      radial-gradient(115% 55% at 50% -8%, rgba(225,18,33,.22), rgba(225,18,33,0) 62%),
+      var(--ink);
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+  }
+
+  ::selection{ background:var(--red); color:#fff; }
+
+  a{ color:var(--red-soft); text-underline-offset:3px; }
+
+  :focus-visible{
+    outline:2px solid var(--red-soft);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  /* ---------- Masthead ---------- */
+
+  .masthead{
+    max-width:760px;
+    margin:0 auto;
+    padding:clamp(56px,12vw,104px) 0 clamp(40px,7vw,64px);
+    text-align:center;
+  }
+
+  .eyebrow{
+    margin:0 0 22px;
+    font-family:var(--font-mono);
+    font-size:.6875rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+
+  .wordmark{
+    margin:0;
+    font-family:var(--font-display);
+    font-weight:800;
+    font-size:clamp(2.1rem,9vw,3.6rem);
+    letter-spacing:.34em;
+    text-indent:.34em;
+    text-transform:uppercase;
+    color:var(--silver);
+    background:linear-gradient(180deg,#FFFFFF 0%,#DCDCE4 45%,#8E8E99 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+
+  .wordmark .first{
+    -webkit-text-fill-color:var(--red);
+    color:var(--red);
+  }
+
+  .tagline{
+    margin:20px auto 0;
+    max-width:44ch;
+    font-size:1.0625rem;
+    color:var(--muted);
+  }
+
+  .stamp{
+    margin:28px 0 0;
+    font-family:var(--font-mono);
+    font-size:.6875rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:#5E5E68;
+  }
+
+  /* ---------- Selettore lingua ---------- */
+
+  .lang-switch{ display:none; }
+
+  .js .lang-switch{
+    display:flex;
+    justify-content:center;
+    gap:6px;
+    margin-top:34px;
+  }
+
+  .lang-switch button{
+    appearance:none;
+    padding:8px 18px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    background:rgba(255,255,255,.02);
+    color:var(--muted);
+    font-family:var(--font-mono);
+    font-size:.6875rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    cursor:pointer;
+    transition:color .18s ease, border-color .18s ease, background-color .18s ease;
+  }
+
+  .lang-switch button:hover{ color:var(--silver); border-color:#3A3A45; }
+
+  .lang-switch button[aria-pressed="true"]{
+    color:#fff;
+    border-color:rgba(225,18,33,.55);
+    background:rgba(225,18,33,.16);
+  }
+
+  /* ---------- Documento + pellicola ---------- */
+
+  .policy{
+    position:relative;
+    max-width:760px;
+    margin:0 auto;
+    padding-left:var(--gutter);
+  }
+
+  .policy::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:6px;
+    bottom:6px;
+    width:var(--rail);
+    border-radius:3px;
+    background-image:
+      repeating-linear-gradient(180deg, rgba(8,8,10,.92) 0 11px, rgba(8,8,10,0) 11px 30px),
+      linear-gradient(90deg,#5A5A64 0%,#D6D6DE 22%,#FFFFFF 46%,#C2C2CC 68%,#63636D 100%);
+    background-size:12px 100%, 100% 100%;
+    background-position:center top, left top;
+    background-repeat:no-repeat, no-repeat;
+    opacity:.9;
+  }
+
+  .policy > section{ margin:0; }
+
+  .policy h2{
+    margin:56px 0 14px;
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:1.1875rem;
+    line-height:1.35;
+    letter-spacing:-.01em;
+    color:var(--silver);
+  }
+
+  .policy h2:first-of-type{ margin-top:0; }
+
+  .num{
+    display:block;
+    margin-bottom:10px;
+    font-family:var(--font-mono);
+    font-size:.6875rem;
+    font-weight:400;
+    letter-spacing:.22em;
+    color:var(--red);
+  }
+
+  .policy p{ margin:0 0 18px; }
+
+  .policy .intro{
+    margin-bottom:52px;
+    padding-bottom:36px;
+    border-bottom:1px solid var(--line);
+    font-size:1.1875rem;
+    line-height:1.7;
+    color:var(--silver);
+  }
+
+  .policy strong{ color:var(--silver); font-weight:600; }
+
+  .service{
+    margin:0 0 12px;
+    padding-left:16px;
+    border-left:2px solid rgba(225,18,33,.5);
+  }
+
+  .contact{
+    margin-top:14px;
+    padding:24px 26px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+  }
+
+  .contact p{ margin:0; }
+
+  .placeholder{
+    font-family:var(--font-mono);
+    font-size:.8125rem;
+    letter-spacing:.04em;
+    color:var(--red-soft);
+  }
+
+  .colophon{
+    max-width:760px;
+    margin:80px auto 0;
+    padding-top:28px;
+    border-top:1px solid var(--line);
+    font-family:var(--font-mono);
+    font-size:.6875rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:#55555F;
+    text-align:center;
+  }
+
+  /* ---------- Lingue ---------- */
+
+  body[data-lang="it"] [lang="en"]{ display:none; }
+  body[data-lang="en"] [lang="it"]{ display:none; }
+
+  /* ---------- Ingresso ---------- */
+
+  .masthead > *{
+    animation:rise .7s cubic-bezier(.2,.7,.3,1) backwards;
+  }
+  .masthead > *:nth-child(2){ animation-delay:.06s; }
+  .masthead > *:nth-child(3){ animation-delay:.12s; }
+  .masthead > *:nth-child(4){ animation-delay:.18s; }
+  .masthead > *:nth-child(5){ animation-delay:.24s; }
+
+  @keyframes rise{
+    from{ opacity:0; transform:translateY(14px); }
+    to{ opacity:1; transform:none; }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+    .masthead > *{ animation:none; }
+    *{ transition-duration:.01ms !important; }
+  }
+
+  /* ---------- Mobile ---------- */
+
+  @media (max-width:640px){
+    body{ font-size:1rem; padding-bottom:64px; }
+    .policy{ padding-left:0; }
+    .policy::before{
+      position:static;
+      display:block;
+      width:100%;
+      height:14px;
+      margin-bottom:44px;
+      background-image:
+        repeating-linear-gradient(90deg, rgba(8,8,10,.92) 0 11px, rgba(8,8,10,0) 11px 30px),
+        linear-gradient(180deg,#5A5A64 0%,#D6D6DE 22%,#FFFFFF 46%,#C2C2CC 68%,#63636D 100%);
+      background-size:100% 6px, 100% 100%;
+      background-position:left center, left top;
+    }
+    .policy .intro{ font-size:1.0625rem; }
+    .contact{ padding:20px; }
+  }
+
+  /* ---------- Stampa ---------- */
+
+  @media print{
+    body{ background:#fff; color:#111; padding:0; }
+    .lang-switch, .policy::before{ display:none; }
+    .policy{ padding-left:0; max-width:none; }
+    .wordmark{ -webkit-text-fill-color:#111; color:#111; background:none; }
+    .wordmark .first{ -webkit-text-fill-color:#C8102E; color:#C8102E; }
+    .eyebrow,.stamp,.colophon,.tagline{ color:#555; }
+    .policy h2,.policy .intro,.policy strong{ color:#111; }
+    .num{ color:#C8102E; }
+    .contact{ background:none; border:1px solid #ccc; }
+    body[data-lang="it"] [lang="en"],
+    body[data-lang="en"] [lang="it"]{ display:block; }
+  }
+</style>
 </head>
-<body>
-  <section lang="it">
-    <h1>Informativa sulla Privacy di Stinger</h1>
-    <p class="meta"><strong>Ultimo aggiornamento:</strong> 7 agosto 2026</p>
 
-    <p>Stinger è progettata secondo un principio di minimizzazione dei dati. L'app non richiede la creazione di un account e non raccoglie intenzionalmente nome, indirizzo e-mail, numero di telefono o altre informazioni direttamente identificative dell'utente.</p>
+<body data-lang="it">
 
-    <h2>1. Account e identificazione dell'utente</h2>
-    <p>Stinger non richiede né fornisce account utente. L'app non utilizza identificatori utente persistenti o identificatori persistenti del dispositivo per associare preferiti, voti o altre attività a una specifica persona.</p>
+  <header class="masthead">
+    <p class="eyebrow">
+      <span lang="it">Informativa sulla privacy</span>
+      <span lang="en">Privacy policy</span>
+    </p>
 
-    <h2>2. Preferiti, stato di voto e preferenze locali</h2>
-    <p>I film aggiunti ai preferiti, l'informazione relativa ai film già votati e alcune preferenze dell'app, come la lingua selezionata, vengono memorizzati localmente sul dispositivo dell'utente. Questi dati non vengono inviati ai server di Stinger.</p>
-    <p>La cancellazione dei dati dell'app o la disinstallazione dell'applicazione può comportare la perdita di tali informazioni.</p>
+    <h1 class="wordmark"><span class="first">S</span>tinger</h1>
 
-    <h2>3. Votazioni sulle scene post-credit</h2>
-    <p>Stinger consente agli utenti di partecipare a votazioni relative alla presenza di scene durante o dopo i titoli di coda.</p>
-    <p>Quando viene espresso un voto, l'app trasmette al backend gestito tramite Supabase esclusivamente le informazioni necessarie ad aggiornare i risultati aggregati della community, ossia l'identificativo del film e la risposta selezionata.</p>
-    <p>Stinger non associa il voto a un account, a un identificatore utente o a un identificatore persistente del dispositivo e non conserva intenzionalmente una cronologia individuale dei voti. Il voto viene utilizzato per incrementare i conteggi aggregati relativi al film.</p>
+    <p class="tagline">
+      <span lang="it">Nessun account, nessun profilo. Solo film e scene dopo i titoli di coda.</span>
+      <span lang="en">No accounts, no profiles. Just movies and what happens after the credits.</span>
+    </p>
 
-    <h2>4. Informazioni sui film e ricerca</h2>
-    <p>Stinger utilizza i servizi di The Movie Database (TMDb) per ottenere elenchi di film, informazioni sui film, immagini, poster e risultati di ricerca.</p>
-    <p>Quando l'utente effettua una ricerca, il testo inserito viene trasmesso direttamente all'API di TMDb per restituire i risultati richiesti. Stinger non conserva una cronologia delle ricerche dell'utente e non utilizza tali ricerche per profilazione pubblicitaria.</p>
+    <p class="stamp">
+      <span lang="it">Ultimo aggiornamento · 7 agosto 2026</span>
+      <span lang="en">Last updated · August 7, 2026</span>
+    </p>
 
-    <h2>5. Immagini e salvataggio nella galleria</h2>
-    <p>Stinger può consentire all'utente di salvare poster o altre immagini relative ai film nella galleria del dispositivo. L'operazione avviene su richiesta dell'utente. Stinger non carica la libreria fotografica personale dell'utente sui propri server.</p>
+    <nav class="lang-switch" aria-label="Lingua / Language">
+      <button type="button" data-set-lang="it" aria-pressed="true">Italiano</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">English</button>
+    </nav>
+  </header>
 
-    <h2>6. Servizi di terze parti</h2>
-    <p>Stinger utilizza:</p>
-    <p><strong>Supabase</strong>, per la consultazione dei dati condivisi relativi ai film e per l'aggiornamento dei conteggi aggregati delle votazioni.</p>
-    <p><strong>The Movie Database (TMDb)</strong>, per ottenere dati, immagini, poster e risultati di ricerca relativi ai film.</p>
-    <p>Durante le normali comunicazioni tramite Internet, tali fornitori possono ricevere informazioni tecniche necessarie alla gestione delle richieste di rete, come l'indirizzo IP e altri dati tecnici di connessione, secondo le rispettive informative e condizioni di servizio.</p>
+  <main class="policy">
 
-    <h2>7. Pubblicità, analytics e profilazione</h2>
-    <p>Stinger non utilizza intenzionalmente servizi pubblicitari, sistemi di pubblicità personalizzata o servizi di analytics finalizzati alla profilazione degli utenti.</p>
+    <!-- ============ ITALIANO ============ -->
+    <section lang="it">
+      <p class="intro">Stinger è progettata secondo un principio di minimizzazione dei dati. L'app non richiede la creazione di un account e non raccoglie intenzionalmente nome, indirizzo e-mail, numero di telefono o altre informazioni direttamente identificative dell'utente.</p>
 
-    <h2>8. Conservazione ed eliminazione dei dati</h2>
-    <p>I preferiti, lo stato dei film già votati e le preferenze locali rimangono sul dispositivo fino alla loro cancellazione, alla cancellazione dei dati dell'app o alla disinstallazione.</p>
-    <p>Stinger non conserva sul proprio backend account utente, liste personali di preferiti o cronologie individuali dei voti. I voti inviati vengono utilizzati per aggiornare esclusivamente conteggi aggregati.</p>
+      <h2 id="it-1"><span class="num">01</span>Account e identificazione dell'utente</h2>
+      <p>Stinger non richiede né fornisce account utente. L'app non utilizza identificatori utente persistenti o identificatori persistenti del dispositivo per associare preferiti, voti o altre attività a una specifica persona.</p>
 
-    <h2>9. Sicurezza</h2>
-    <p>Le comunicazioni con i servizi esterni utilizzati dall'app avvengono tramite connessioni HTTPS supportate dai rispettivi servizi. Stinger adotta un approccio di minimizzazione dei dati, limitando la trasmissione delle informazioni a quanto necessario per fornire le funzionalità richieste.</p>
+      <h2 id="it-2"><span class="num">02</span>Preferiti, stato di voto e preferenze locali</h2>
+      <p>I film aggiunti ai preferiti, l'informazione relativa ai film già votati e alcune preferenze dell'app, come la lingua selezionata, vengono memorizzati localmente sul dispositivo dell'utente. Questi dati non vengono inviati ai server di Stinger.</p>
+      <p>La cancellazione dei dati dell'app o la disinstallazione dell'applicazione può comportare la perdita di tali informazioni.</p>
 
-    <h2>10. Minori</h2>
-    <p>Stinger non è progettata per raccogliere intenzionalmente informazioni personali direttamente identificative di minori.</p>
+      <h2 id="it-3"><span class="num">03</span>Votazioni sulle scene post-credit</h2>
+      <p>Stinger consente agli utenti di partecipare a votazioni relative alla presenza di scene durante o dopo i titoli di coda.</p>
+      <p>Quando viene espresso un voto, l'app trasmette al backend gestito tramite Supabase esclusivamente le informazioni necessarie ad aggiornare i risultati aggregati della community, ossia l'identificativo del film e la risposta selezionata.</p>
+      <p>Stinger non associa il voto a un account, a un identificatore utente o a un identificatore persistente del dispositivo e non conserva intenzionalmente una cronologia individuale dei voti. Il voto viene utilizzato per incrementare i conteggi aggregati relativi al film.</p>
 
-    <h2>11. Modifiche alla presente informativa</h2>
-    <p>Questa Informativa sulla Privacy può essere aggiornata in caso di modifiche alle funzionalità di Stinger, ai servizi di terze parti utilizzati o alle modalità di trattamento dei dati. La versione aggiornata sarà pubblicata a questo stesso indirizzo.</p>
+      <h2 id="it-4"><span class="num">04</span>Informazioni sui film e ricerca</h2>
+      <p>Stinger utilizza i servizi di The Movie Database (TMDb) per ottenere elenchi di film, informazioni sui film, immagini, poster e risultati di ricerca.</p>
+      <p>Quando l'utente effettua una ricerca, il testo inserito viene trasmesso direttamente all'API di TMDb per restituire i risultati richiesti. Stinger non conserva una cronologia delle ricerche dell'utente e non utilizza tali ricerche per profilazione pubblicitaria.</p>
 
-    <h2>12. Contatti</h2>
-    <p>Per domande relative alla presente Informativa sulla Privacy o alle modalità di trattamento dei dati da parte di Stinger:</p>
-    <p><strong>[NOME SVILUPPATORE / SOCIETÀ]</strong><br>
-    <strong>[EMAIL DI CONTATTO]</strong></p>
-  </section>
+      <h2 id="it-5"><span class="num">05</span>Immagini e salvataggio nella galleria</h2>
+      <p>Stinger può consentire all'utente di salvare poster o altre immagini relative ai film nella galleria del dispositivo. L'operazione avviene su richiesta dell'utente. Stinger non carica la libreria fotografica personale dell'utente sui propri server.</p>
 
-  <hr>
+      <h2 id="it-6"><span class="num">06</span>Servizi di terze parti</h2>
+      <p>Stinger utilizza:</p>
+      <p class="service"><strong>Supabase</strong>, per la consultazione dei dati condivisi relativi ai film e per l'aggiornamento dei conteggi aggregati delle votazioni.</p>
+      <p class="service"><strong>The Movie Database (TMDb)</strong>, per ottenere dati, immagini, poster e risultati di ricerca relativi ai film.</p>
+      <p>Durante le normali comunicazioni tramite Internet, tali fornitori possono ricevere informazioni tecniche necessarie alla gestione delle richieste di rete, come l'indirizzo IP e altri dati tecnici di connessione, secondo le rispettive informative e condizioni di servizio.</p>
 
-  <section lang="en">
-    <h1>Stinger Privacy Policy</h1>
-    <p class="meta"><strong>Last updated:</strong> August 7, 2026</p>
+      <h2 id="it-7"><span class="num">07</span>Pubblicità, analytics e profilazione</h2>
+      <p>Stinger non utilizza intenzionalmente servizi pubblicitari, sistemi di pubblicità personalizzata o servizi di analytics finalizzati alla profilazione degli utenti.</p>
 
-    <p>Stinger is designed according to a data minimization principle. The app does not require users to create an account and does not intentionally collect users' names, email addresses, telephone numbers, or other directly identifying information.</p>
+      <h2 id="it-8"><span class="num">08</span>Conservazione ed eliminazione dei dati</h2>
+      <p>I preferiti, lo stato dei film già votati e le preferenze locali rimangono sul dispositivo fino alla loro cancellazione, alla cancellazione dei dati dell'app o alla disinstallazione.</p>
+      <p>Stinger non conserva sul proprio backend account utente, liste personali di preferiti o cronologie individuali dei voti. I voti inviati vengono utilizzati per aggiornare esclusivamente conteggi aggregati.</p>
 
-    <h2>1. User accounts and identification</h2>
-    <p>Stinger does not require or provide user accounts. The app does not use persistent user identifiers or persistent device identifiers to associate favorites, votes, or other activities with a specific person.</p>
+      <h2 id="it-9"><span class="num">09</span>Sicurezza</h2>
+      <p>Le comunicazioni con i servizi esterni utilizzati dall'app avvengono tramite connessioni HTTPS supportate dai rispettivi servizi. Stinger adotta un approccio di minimizzazione dei dati, limitando la trasmissione delle informazioni a quanto necessario per fornire le funzionalità richieste.</p>
 
-    <h2>2. Favorites, voting status and local preferences</h2>
-    <p>Movies added to favorites, information used to remember which movies have already been voted on, and certain app preferences such as the selected language are stored locally on the user's device. This information is not transmitted to Stinger's servers.</p>
-    <p>Clearing the app's data or uninstalling the application may remove this information.</p>
+      <h2 id="it-10"><span class="num">10</span>Minori</h2>
+      <p>Stinger non è progettata per raccogliere intenzionalmente informazioni personali direttamente identificative di minori.</p>
 
-    <h2>3. Post-credit scene voting</h2>
-    <p>Stinger allows users to participate in community voting regarding the presence of scenes during or after the credits.</p>
-    <p>When a vote is submitted, the app transmits to the backend operated through Supabase only the information necessary to update aggregate community results: the movie identifier and the selected answer.</p>
-    <p>Stinger does not associate the vote with an account, user identifier, or persistent device identifier and does not intentionally retain an individual voting history. The submitted vote is used to increment aggregate counters for the relevant movie.</p>
+      <h2 id="it-11"><span class="num">11</span>Modifiche alla presente informativa</h2>
+      <p>Questa Informativa sulla Privacy può essere aggiornata in caso di modifiche alle funzionalità di Stinger, ai servizi di terze parti utilizzati o alle modalità di trattamento dei dati. La versione aggiornata sarà pubblicata a questo stesso indirizzo.</p>
 
-    <h2>4. Movie information and search</h2>
-    <p>Stinger uses services provided by The Movie Database (TMDb) to retrieve movie lists, movie information, images, posters, and search results.</p>
-    <p>When a user performs a search, the entered search text is transmitted directly to the TMDb API in order to return the requested results. Stinger does not store a user search history and does not use these searches for advertising profiling.</p>
+      <h2 id="it-12"><span class="num">12</span>Contatti</h2>
+      <p>Per domande relative alla presente Informativa sulla Privacy o alle modalità di trattamento dei dati da parte di Stinger:</p>
+      <div class="contact">
+        <p class="placeholder">[NOME SVILUPPATORE / SOCIETÀ]</p>
+        <p class="placeholder">[EMAIL DI CONTATTO]</p>
+      </div>
+    </section>
 
-    <h2>5. Images and saving to the device gallery</h2>
-    <p>Stinger may allow users to save movie posters or other movie-related images to the device gallery. This operation is performed at the user's request. Stinger does not upload the user's personal photo library to its servers.</p>
+    <!-- ============ ENGLISH ============ -->
+    <section lang="en">
+      <p class="intro">Stinger is designed according to a data minimization principle. The app does not require users to create an account and does not intentionally collect users' names, email addresses, telephone numbers, or other directly identifying information.</p>
 
-    <h2>6. Third-party services</h2>
-    <p>Stinger uses:</p>
-    <p><strong>Supabase</strong>, to access shared movie data and update aggregate community voting totals.</p>
-    <p><strong>The Movie Database (TMDb)</strong>, to retrieve movie data, images, posters, and search results.</p>
-    <p>During normal Internet communications, these providers may receive technical information necessary to process network requests, such as IP addresses and other connection-related technical data, in accordance with their respective policies and terms.</p>
+      <h2 id="en-1"><span class="num">01</span>User accounts and identification</h2>
+      <p>Stinger does not require or provide user accounts. The app does not use persistent user identifiers or persistent device identifiers to associate favorites, votes, or other activities with a specific person.</p>
 
-    <h2>7. Advertising, analytics and profiling</h2>
-    <p>Stinger does not intentionally use advertising services, personalized advertising systems, or analytics services for user profiling.</p>
+      <h2 id="en-2"><span class="num">02</span>Favorites, voting status and local preferences</h2>
+      <p>Movies added to favorites, information used to remember which movies have already been voted on, and certain app preferences such as the selected language are stored locally on the user's device. This information is not transmitted to Stinger's servers.</p>
+      <p>Clearing the app's data or uninstalling the application may remove this information.</p>
 
-    <h2>8. Data retention and deletion</h2>
-    <p>Favorites, voting status, and local preferences remain on the user's device until they are deleted, the app's data is cleared, or the application is uninstalled.</p>
-    <p>Stinger does not retain user accounts, personal favorite lists, or individual voting histories on its backend. Submitted votes are used solely to update aggregate counters.</p>
+      <h2 id="en-3"><span class="num">03</span>Post-credit scene voting</h2>
+      <p>Stinger allows users to participate in community voting regarding the presence of scenes during or after the credits.</p>
+      <p>When a vote is submitted, the app transmits to the backend operated through Supabase only the information necessary to update aggregate community results: the movie identifier and the selected answer.</p>
+      <p>Stinger does not associate the vote with an account, user identifier, or persistent device identifier and does not intentionally retain an individual voting history. The submitted vote is used to increment aggregate counters for the relevant movie.</p>
 
-    <h2>9. Security</h2>
-    <p>Communications with external services used by the app are performed over HTTPS connections supported by those services. Stinger follows a data minimization approach and limits data transmission to what is necessary to provide the requested functionality.</p>
+      <h2 id="en-4"><span class="num">04</span>Movie information and search</h2>
+      <p>Stinger uses services provided by The Movie Database (TMDb) to retrieve movie lists, movie information, images, posters, and search results.</p>
+      <p>When a user performs a search, the entered search text is transmitted directly to the TMDb API in order to return the requested results. Stinger does not store a user search history and does not use these searches for advertising profiling.</p>
 
-    <h2>10. Children's privacy</h2>
-    <p>Stinger is not designed to intentionally collect directly identifying personal information from children.</p>
+      <h2 id="en-5"><span class="num">05</span>Images and saving to the device gallery</h2>
+      <p>Stinger may allow users to save movie posters or other movie-related images to the device gallery. This operation is performed at the user's request. Stinger does not upload the user's personal photo library to its servers.</p>
 
-    <h2>11. Changes to this Privacy Policy</h2>
-    <p>This Privacy Policy may be updated if Stinger's functionality, third-party services, or data processing practices change. The updated version will be published at this same address.</p>
+      <h2 id="en-6"><span class="num">06</span>Third-party services</h2>
+      <p>Stinger uses:</p>
+      <p class="service"><strong>Supabase</strong>, to access shared movie data and update aggregate community voting totals.</p>
+      <p class="service"><strong>The Movie Database (TMDb)</strong>, to retrieve movie data, images, posters, and search results.</p>
+      <p>During normal Internet communications, these providers may receive technical information necessary to process network requests, such as IP addresses and other connection-related technical data, in accordance with their respective policies and terms.</p>
 
-    <h2>12. Contact</h2>
-    <p>For questions regarding this Privacy Policy or Stinger's data practices:</p>
-    <p><strong>[DEVELOPER / COMPANY NAME]</strong><br>
-    <strong>[CONTACT EMAIL]</strong></p>
-  </section>
+      <h2 id="en-7"><span class="num">07</span>Advertising, analytics and profiling</h2>
+      <p>Stinger does not intentionally use advertising services, personalized advertising systems, or analytics services for user profiling.</p>
+
+      <h2 id="en-8"><span class="num">08</span>Data retention and deletion</h2>
+      <p>Favorites, voting status, and local preferences remain on the user's device until they are deleted, the app's data is cleared, or the application is uninstalled.</p>
+      <p>Stinger does not retain user accounts, personal favorite lists, or individual voting histories on its backend. Submitted votes are used solely to update aggregate counters.</p>
+
+      <h2 id="en-9"><span class="num">09</span>Security</h2>
+      <p>Communications with external services used by the app are performed over HTTPS connections supported by those services. Stinger follows a data minimization approach and limits data transmission to what is necessary to provide the requested functionality.</p>
+
+      <h2 id="en-10"><span class="num">10</span>Children's privacy</h2>
+      <p>Stinger is not designed to intentionally collect directly identifying personal information from children.</p>
+
+      <h2 id="en-11"><span class="num">11</span>Changes to this Privacy Policy</h2>
+      <p>This Privacy Policy may be updated if Stinger's functionality, third-party services, or data processing practices change. The updated version will be published at this same address.</p>
+
+      <h2 id="en-12"><span class="num">12</span>Contact</h2>
+      <p>For questions regarding this Privacy Policy or Stinger's data practices:</p>
+      <div class="contact">
+        <p class="placeholder">Digital Ducks</p>
+        <p class="placeholder">stingerapp@proton.me</p>
+      </div>
+    </section>
+
+  </main>
+
+  <p class="colophon">
+    <span lang="it">Stinger · Dati dei film forniti da TMDb</span>
+    <span lang="en">Stinger · Movie data provided by TMDb</span>
+  </p>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('[data-set-lang]');
+
+    function setLang(lang) {
+      document.body.dataset.lang = lang;
+      document.documentElement.lang = lang;
+      buttons.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.setLang === lang));
+      });
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.dataset.setLang); });
+    });
+
+    var preferred = (navigator.language || 'it').toLowerCase();
+    setLang(preferred.indexOf('it') === 0 ? 'it' : 'en');
+  })();
+</script>
+
 </body>
 </html>
