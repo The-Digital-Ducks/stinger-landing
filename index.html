@@ -159,6 +159,8 @@
     box-shadow:0 0 0 1px var(--line);
   }
   .store.alt:hover{ background:#26262A; }
+  .store.soon{ opacity:.6; cursor:default; box-shadow:0 0 0 1px var(--line); }
+  .store.soon:hover{ transform:none; background:var(--panel2); }
   .store svg{ width:22px; height:22px; flex:none; }
   .store small{ display:block; font-size:.6875rem; letter-spacing:.08em; text-transform:uppercase; opacity:.75; }
   .store strong{ display:block; font-size:1.0625rem; line-height:1.2; }
@@ -386,15 +388,14 @@
     </p>
 
     <div class="stores">
-      <!-- Sostituire href con i link reali degli store -->
-      <a class="store" href="#" rel="noopener">
+      <a class="store" href="https://play.google.com/store/apps/details?id=com.digitalducks.stinger&amp;pcampaignid=web_share" rel="noopener">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z" fill="currentColor"/></svg>
         <span><small lang="it">Scarica su</small><small lang="en">Get it on</small><strong>Google Play</strong></span>
       </a>
-      <a class="store alt" href="#" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span><small lang="it">Scarica su</small><small lang="en">Download on the</small><strong>App Store</strong></span>
-      </a>
+      <span class="store alt soon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span><small lang="it">Presto su</small><small lang="en">Coming soon to the</small><strong>App Store</strong></span>
+      </span>
     </div>
 
     <p class="free">
@@ -505,21 +506,21 @@
       <span lang="en">Next time, you’ll know whether to stay.</span>
     </h2>
     <div class="stores">
-      <a class="store" href="#" rel="noopener">
+      <a class="store" href="https://play.google.com/store/apps/details?id=com.digitalducks.stinger&amp;pcampaignid=web_share" rel="noopener">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z" fill="currentColor"/></svg>
         <span><small lang="it">Scarica su</small><small lang="en">Get it on</small><strong>Google Play</strong></span>
       </a>
-      <a class="store alt" href="#" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span><small lang="it">Scarica su</small><small lang="en">Download on the</small><strong>App Store</strong></span>
-      </a>
+      <span class="store alt soon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span><small lang="it">Presto su</small><small lang="en">Coming soon to the</small><strong>App Store</strong></span>
+      </span>
     </div>
   </section>
 
   <footer>
     <span>© 2026 <span class="placeholder">Digital Ducks</span></span>
     <nav>
-      <a href="privacy.html">Privacy</a>
+      <a href="privacy/">Privacy</a>
       <a href="mailto:stinger@digitalducks.space"><span lang="it">Contatti</span><span lang="en">Contact</span></a>
     </nav>
     <p class="tmdb">
